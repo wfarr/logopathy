@@ -8,6 +8,7 @@ using Logopathy.Irc;
 namespace Logopathy.Irc {
     public interface IChat {
         TextBuffer Model;
+        
         string Id;
         string Name;
         ChatStatus Status;

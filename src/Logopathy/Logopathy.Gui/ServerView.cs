@@ -4,7 +4,7 @@ using Gtk;
 using Logopathy.Core;
 
 namespace Logopathy.Gui {
-    public class ChannelView : Gtk.TreeView {
+    public class ServerView : Gtk.TreeView {
         public Chat Selected {
             get {
                 Gtk.TreeModel selectmodel;

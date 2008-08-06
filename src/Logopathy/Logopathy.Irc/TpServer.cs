@@ -11,6 +11,9 @@ namespace Logopathy.Irc {
         
         public ArrayList<IChat> ActiveChats;
         
+        public event EventHandler ChatAdded;
+        public event EventHandler ChatRemoved;
+        
         public TpServer() {
             ActiveChats = new ArrayList<IChat>();
             //FIXME

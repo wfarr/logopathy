@@ -9,6 +9,9 @@ namespace Logopathy.Irc {
         string Name;
         string Url;
         
+        event EventHandler ChatAdded;
+        event EventHandler ChatRemoved;
+        
         ArrayList<IChat> ActiveChats;
     }
 }

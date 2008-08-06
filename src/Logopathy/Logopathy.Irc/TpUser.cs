@@ -8,6 +8,8 @@ namespace Logopathy.Irc {
         public string Name;
         public string Nickname;
         
+        public event EventHandler StatusChanged;
+        
         public TpUser() {
             //FIXME
         }
