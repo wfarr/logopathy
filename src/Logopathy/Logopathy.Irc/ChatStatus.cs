@@ -1,6 +1,6 @@
 using System;
 
-namespace Logopathy.Core {
+namespace Logopathy.Irc {
     public enum ChatStatus : int {
         Unread,
         AllRead,

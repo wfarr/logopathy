@@ -1,10 +1,12 @@
 using System;
+using Gtk;
 
 using Logopathy.Core;
+using Logopathy.Irc;
 
-namespace Logopathy.Core {
-    public class Chat {
-        public Gtk.TextBuffer Model;
+namespace Logopathy.Irc {
+    public class TpChat : IChat {
+        public TextBuffer Model;
         
         public string Id;
         
