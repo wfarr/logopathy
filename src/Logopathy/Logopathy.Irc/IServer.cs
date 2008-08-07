@@ -13,5 +13,8 @@ namespace Logopathy.Irc {
         event EventHandler ChatRemoved;
         
         ArrayList<IChat> ActiveChats;
+        
+        IChat JoinChat(string chat_name);
+        bool QuitChat(IChat chat);
     }
 }

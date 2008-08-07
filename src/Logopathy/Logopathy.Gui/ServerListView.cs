@@ -36,7 +36,7 @@ namespace Logopathy.Gui {
         
         private Gtk.ListStore Store;
         
-        public ServerView() {
+        public ServerListView() {
             Store = new Gtk.ListStore(typeof(Gdk.Pixbuf), // a nice icon
                                       typeof(string), // the server's name
                                       typeof(IServer));

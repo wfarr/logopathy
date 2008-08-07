@@ -18,5 +18,11 @@ namespace Logopathy.Irc {
             ActiveChats = new ArrayList<IChat>();
             //FIXME
         }
+        
+        public IChat JoinChat(string chat_name) {
+        }
+        
+        public bool QuitChat(IChat chat) {
+        }
     }
 }
