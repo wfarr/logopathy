@@ -10,7 +10,7 @@ namespace Logopathy.Gui.Actions {
         }
         
         private void OnActivated(object obj, EventArgs args) {
-            Gtk.Main.Quit();
+            Logopathy.Core.Application.Quit();
         }
     }
     

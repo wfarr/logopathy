@@ -22,5 +22,9 @@ namespace Logopathy.Core {
             
             Gtk.Application.Run();
         }
+        
+        public static void Quit() {
+            Gtk.Main.Quit();
+        }
     }
 }

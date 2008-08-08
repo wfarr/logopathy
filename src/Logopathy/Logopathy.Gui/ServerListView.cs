@@ -7,7 +7,7 @@ using Logopathy.Irc;
 using Logopathy.Gui;
 
 namespace Logopathy.Gui {
-    public class ServerListView {
+    public class ServerListView : Gtk.TreeView {
         public IServer Selected {
             get {
                 Gtk.TreeModel selectmodel;
@@ -22,12 +22,12 @@ namespace Logopathy.Gui {
             set {}
         }
         
-        public ArrayList<IServer> Servers {
+        public ArrayList Servers {
             get {
-                ArrayList<IServer> list = new ArrayList<IServer>();
+                ArrayList list = new ArrayList();
                 
                 foreach ( object[] row in Store ) {
-                    list.Add((ISource)row[2]);
+                    list.Add((IServer)row[2]);
                 }
                 
                 return list;
@@ -50,8 +50,8 @@ namespace Logopathy.Gui {
         public void AddServer(IServer server) {
             TreeIter iter = Store.Append();
             //Store.SetValue(iter, 0, new Gdk.Pixbuf...)
-            store.SetValue(iter, 1, server.Name);
-            store.SetValue(iter, 2, server);
+            Store.SetValue(iter, 1, server.Name);
+            Store.SetValue(iter, 2, server);
         }
         
         public void RemoveServer(IServer server) {

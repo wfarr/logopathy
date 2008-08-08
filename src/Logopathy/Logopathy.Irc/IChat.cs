@@ -7,15 +7,15 @@ using Logopathy.Irc;
 
 namespace Logopathy.Irc {
     public interface IChat {
-        TextBuffer Model;
+        TextBuffer Model { get; set; }
         
-        string Id;
-        string Name;
-        ChatStatus Status;
+        string Id { get; set; }
+        string Name { get; set; }
+        ChatStatus Status { get; set; }
         
-        ArrayList<IUser> Users;
+        ArrayList Users { get; set; }
         
-        string Username;
+        string Username { get; set; }
         
         void Conversation(DateTime time, string username, string message);
         void Me(DateTime time, string username, string message);

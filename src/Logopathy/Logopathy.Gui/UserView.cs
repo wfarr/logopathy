@@ -1,6 +1,9 @@
 using System;
 using Gtk;
 
+using Logopathy.Core;
+using Logopathy.Irc;
+
 namespace Logopathy.Gui {
     public class UserView : Gtk.TreeView {
         private Gtk.ListStore Store;
@@ -26,6 +29,11 @@ namespace Logopathy.Gui {
                 Gtk.TreeIter iter = Store.Append();
                 Model.SetValue(iter, 0, null);
                 Model.SetValue(iter, 1, user);
+            }
+        }
+        
+        public void Populate(IChat chat) {
+            foreach ( IUser user in chat.Users ) {
             }
         }
     }

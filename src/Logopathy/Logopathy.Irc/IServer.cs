@@ -6,13 +6,13 @@ using Logopathy.Irc;
 
 namespace Logopathy.Irc {
     public interface IServer {
-        string Name;
-        string Url;
+        string Name { get; set; }
+        string Url { get; set; }
         
         event EventHandler ChatAdded;
         event EventHandler ChatRemoved;
         
-        ArrayList<IChat> ActiveChats;
+        ArrayList ActiveChats { get; set; }
         
         IChat JoinChat(string chat_name);
         bool QuitChat(IChat chat);

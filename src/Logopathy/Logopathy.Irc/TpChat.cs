@@ -1,4 +1,5 @@
 using System;
+using System.Collections;
 using Gtk;
 
 using Logopathy.Core;
@@ -6,16 +7,66 @@ using Logopathy.Irc;
 
 namespace Logopathy.Irc {
     public class TpChat : IChat {
-        public TextBuffer Model;
+        private TextBuffer model;
+        public TextBuffer Model {
+            get {
+                return model;
+            }
+            set {
+                model = value;
+            }
+        }
         
-        public string Id;
+        private string id;
+        public string Id {
+            get {
+                return id;
+            }
+            set {
+                id = value;
+            }
+        }
         
-        public string Name;
-        public ChatStatus Status;
+        private string name;
+        public string Name {
+            get {
+                return name;
+            }
+            set {
+                name = value;
+            }
+        }
+        private ChatStatus status;
+        public ChatStatus Status {
+            get {
+                return status;
+            }
+            set {
+                status = value;
+            }
+        }
         
-        public string Username;
+        private string username;
+        public string Username {
+            get {
+                return username;
+            }
+            set {
+                username = value;
+            }
+        }
         
-        public Chat(string chatid /*FIXME when we have telepathy-glib-sharp &c.*/) {
+        private ArrayList users;
+        public ArrayList Users {
+            get {
+                return users;
+            }
+            set {
+                users = value;
+            }
+        }
+        
+        public TpChat(string chatid /*FIXME when we have telepathy-glib-sharp &c.*/) {
             this.Id = chatid;
             
             this.Model = new Gtk.TextBuffer(new Gtk.TextTagTable());
@@ -31,43 +82,17 @@ namespace Logopathy.Irc {
         }
         
         public void Conversation(DateTime time, string username, string message) {
-            string text = String.Format("\<{0}\> <b>*{1}</b>: {2}",this.MakePrettyDate(time), username, message);
+            string text = String.Format("<{0}> <b>*{1}</b>: {2}",Util.MakePrettyDate(time), username, message);
             AppendText(text);
         }
         
         public void Me(DateTime time, string username, string message) {
-            string text = String.Format("\<{0}\> <b>*{1} {2}</b>", this.MakePrettyDate(time), username, message);
+            string text = String.Format("<{0}> <b>*{1} {2}</b>", Util.MakePrettyDate(time), username, message);
             AppendText(text);
         }
         
         private void AppendText(string text) {
             Model.Text += text+"\n";
-        }
-        
-        private string MakePrettyDate(DateTime dtdate) {
-            string hour;
-            string minute;
-            string second;
-            
-            if ( dtdate.Hour.ToString().Length == 1 ) {
-                hour = "0"+dtdate.Hour.ToString();
-            } else {
-                hour = dtdate.Hour.ToString();
-            }
-            
-            if ( dtdate.Minute.ToString().Length == 1 ) {
-                minute = "0"+dtdate.Minute.ToString();
-            } else {
-                minute = dtdate.Minute.ToString();
-            }
-            
-            if ( dtdate.Second.ToString().Length == 1 ) {
-                second = "0"+dtdate.Second.ToString();
-            } else {
-                second = dtdate.Second.ToString();
-            }
-            
-            return hour+":"+minute+":"+second;
         }
     }
 }

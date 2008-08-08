@@ -2,8 +2,8 @@ using System;
 
 namespace Logopathy.Irc {
     public interface IUser {
-        string Name;
-        string Nickname;
+        string Name { get; set; }
+        string Nickname { get; set; }
         
         event EventHandler StatusChanged;
         
