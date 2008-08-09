@@ -38,11 +38,13 @@ namespace Logopathy.Irc {
         public event EventHandler ChatAdded;
         public event EventHandler ChatRemoved;
         
+        private IChat to_sate_will;
+        
         public TpServer() {
             ActiveChats = new ArrayList();
-            IChat chat1 = new TpChat("");
-            chat1.Name = "Hiya";
-            ActiveChats.Add(chat1);
+            to_sate_will = new TpChat("");
+            to_sate_will.Name = "Hiya";
+            ActiveChats.Add(to_sate_will);
             
             //FIXME
         }
