@@ -31,7 +31,7 @@ namespace Logopathy.Irc {
             }
             set {
                 status = value;
-                StatusChanged();
+                StatusChanged(this, new EventArgs());
             }
         }
         

@@ -4,7 +4,7 @@ using System.Collections;
 using Logopathy.Core;
 
 namespace Logopathy.Irc {
-    public class TpAccount {
+    public class TpAccount : IAccount {
         private string username;
         public string Username {
             get {

@@ -15,7 +15,7 @@ namespace Logopathy.Irc {
         }
         
         public static IAccount RegisterUser(IServer server, string username, string password) {
-            return new TpUser();
+            return new TpAccount();
         }
     }
 }
