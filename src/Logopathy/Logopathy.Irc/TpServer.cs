@@ -40,6 +40,16 @@ namespace Logopathy.Irc {
         
         private IChat to_sate_will;
         
+        private IAccount account;
+        public IAccount Account {
+            get {
+                return account;
+            }
+            set {
+                account = value;
+            }
+        }
+        
         public TpServer() {
             ActiveChats = new ArrayList();
             to_sate_will = new TpChat("");

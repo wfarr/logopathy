@@ -14,6 +14,8 @@ namespace Logopathy.Irc {
         
         ArrayList ActiveChats { get; set; }
         
+        IAccount Account { get; set; }
+        
         IChat JoinChat(string chat_name);
         bool QuitChat(IChat chat);
     }

@@ -24,6 +24,17 @@ namespace Logopathy.Irc {
             }
         }
         
+        private UserStatus status;
+        public UserStatus Status {
+            get {
+                return status;
+            }
+            set {
+                status = value;
+                StatusChanged();
+            }
+        }
+        
         public event EventHandler StatusChanged;
         
         public TpUser() {
