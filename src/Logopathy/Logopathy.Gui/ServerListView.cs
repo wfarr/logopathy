@@ -50,8 +50,8 @@ namespace Logopathy.Gui {
                 AddServer(s);
             }
             
-            Logopathy.Irc.Core.ServerAdded += OnServerAdded();
-            Logopathy.Irc.Core.ServerRemoved += OnServerRemoved();
+            Logopathy.Irc.Core.ServerAdded += OnServerAdded;
+            Logopathy.Irc.Core.ServerRemoved += OnServerRemoved;
         }
         
         private void OnServerAdded(object obj, EventArgs args) {
