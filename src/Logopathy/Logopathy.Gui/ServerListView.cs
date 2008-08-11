@@ -45,6 +45,23 @@ namespace Logopathy.Gui {
             InsertColumn(-1, "Pix", new Gtk.CellRendererPixbuf(), "pixbuf", 0);
             InsertColumn(-1, "Server", new Gtk.CellRendererText(), "text", 1);
             HeadersVisible = false;
+            
+            foreach ( IServer s in Logopathy.Irc.Core.GetServers() ) {
+                AddServer(s);
+            }
+            
+            Logopathy.Irc.Core.ServerAdded += OnServerAdded();
+            Logopathy.Irc.Core.ServerRemoved += OnServerRemoved();
+        }
+        
+        private void OnServerAdded(object obj, EventArgs args) {
+            IServer s = (IServer)obj;
+            AddServer(s);
+        }
+        
+        private void OnServerRemoved(object obj, EventArgs args) {
+            IServer s = (IServer)obj;
+            RemoveServer(s);
         }
         
         public void AddServer(IServer server) {

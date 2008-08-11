@@ -9,6 +9,9 @@ namespace Logopathy.Irc {
             return new TpServer();
         }
         
+        public static event EventHandler ServerAdded();
+        public static event EventHandler ServerRemoved();
+        
         public static ArrayList GetServers() {
             ArrayList a = new ArrayList();
             return a;
